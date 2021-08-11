@@ -1,17 +1,27 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
-void wife(int num)
+int factorial (int i)
 {
-	if (num > 9)
+	int m = 0;
+	int ret = 1;
+	int sum = 0;
+        for (m = 1; m <= i; m++)
 	{
-		wife(num / 10);
+			ret= ret * factorial(m);
 	}
-	printf("%d ", num % 10);
+		return sum = sum + ret;
+	
+	
 }
 int main()
 {
-	unsigned int num = 0;
-	scanf("%d", &num);
-	wife(num);
+	int i = 0;
+	int n = 0;
+	scanf("%d", &n);
+	for (i = 1; i <= n; i++ )
+	{
+		int sum= factorial(i);
+		printf("%d", sum);
+	}
 	return 0;
 }
