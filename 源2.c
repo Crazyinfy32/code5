@@ -1,19 +1,25 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
-int Fib(int n)
+int check_system()
 {
-	if (n <= 2)
-		return 1;
-	else
-		return Fib(n - 1) + Fib(n - 2);
-	
+	int a = 10;
+	return *(char*)&a;
 }
 int main()
+//{
+//	int a = 20;
+//	char* p = &a;
+//	if (*p == 12)
+//		printf("小端");
+//	else
+//		printf("大端");
+//	return 0;
+//}
+
 {
-	int n = 0;
-	int ret = 0;
-	scanf("%d", &n);
-	ret = Fib(n);
-	printf("%d", ret);
-	return 0;
+	int ret = check_system();
+	if (ret == 1)
+		printf("小端");
+	else
+		printf("大端");
 }
